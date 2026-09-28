@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Copy, Check, Send, MessageSquare, ArrowUpRight } from 'lucide-react';
-import confetti from 'canvas-confetti';
 import { personalInfo } from '../data/portfolioData';
 
 export const Contact = ({ playSound, onShowToast }) => {
@@ -14,7 +13,7 @@ export const Contact = ({ playSound, onShowToast }) => {
   const [isSent, setIsSent] = useState(false);
 
   const copyToClipboard = (text, type) => {
-    playSound(700, 'sine', 0.08);
+    playSound?.(700, 'sine', 0.08);
     navigator.clipboard.writeText(text).then(() => {
       if (type === 'email') {
         setCopiedEmail(true);
@@ -28,7 +27,7 @@ export const Contact = ({ playSound, onShowToast }) => {
   };
 
   const handleTemplate = (title, text) => {
-    playSound(600, 'sine', 0.05);
+    playSound?.(600, 'sine', 0.05);
     setSubject(title);
     setMessage(text);
     onShowToast(`Applied template: ${title}`);
@@ -53,8 +52,8 @@ export const Contact = ({ playSound, onShowToast }) => {
       
       {/* Header */}
       <div className="flex items-center gap-3">
-        <div className="w-9 h-9 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center font-mono font-bold text-sm text-indigo-400 shadow-[0_0_15px_rgba(99,102,241,0.25)]">
-          06
+        <div className="w-9 h-9 rounded-lg bg-indigo-600 border-2 border-black flex items-center justify-center font-mono font-black text-sm text-white shadow-[2px_2px_0px_#000]">
+          05
         </div>
         <div>
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">

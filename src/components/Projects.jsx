@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Terminal, Lock, DollarSign, PlusCircle, Activity, Play, Code, CheckCircle, AlertTriangle, ArrowRight, RotateCcw, BarChart3, TrendingUp, Layers, CheckCircle2, ExternalLink, Calculator, GraduationCap, Laptop } from 'lucide-react';
-import confetti from 'canvas-confetti';
 import { projects } from '../data/portfolioData';
 
 export const Projects = ({ playSound }) => {
@@ -38,19 +37,19 @@ export const Projects = ({ playSound }) => {
   const handlePinSubmit = (e) => {
     e.preventDefault();
     if (attempts >= maxAttempts) {
-      playSound(220, 'square', 0.2);
+      playSound?.(220, 'square', 0.2);
       addLog('[SECURITY LOCKOUT] Account locked due to failed attempts. Click [RESET] to restore.', 'error');
       return;
     }
 
     if (pin.trim() === '1234') {
-      playSound(800, 'sine', 0.15);
+      playSound?.(800, 'sine', 0.15);
       setIsAuthenticated(true);
       setAttempts(0);
       addLog('[AUTH SUCCESS] PIN Verified. Welcome, Shakti Singh Thakur!', 'success');
       addLog('[MENU] Ready. Select: Check Balance | Withdraw | Deposit | Logout', 'info');
     } else {
-      playSound(250, 'sawtooth', 0.2);
+      playSound?.(250, 'sawtooth', 0.2);
       const newAttempts = attempts + 1;
       setAttempts(newAttempts);
       const remaining = maxAttempts - newAttempts;
@@ -64,7 +63,7 @@ export const Projects = ({ playSound }) => {
   };
 
   const handleAction = (action) => {
-    playSound(600, 'sine', 0.08);
+    playSound?.(600, 'sine', 0.08);
     if (action === 'balance') {
       addLog(`[LEDGER INQUIRY] Current Balance: ₹ ${balance.toLocaleString('en-IN', { minimumFractionDigits: 2 })}`, 'success');
     } else if (action === 'exit') {
@@ -79,22 +78,22 @@ export const Projects = ({ playSound }) => {
     const amt = parseFloat(amountInput);
 
     if (isNaN(amt) || amt <= 0) {
-      playSound(220, 'square', 0.2);
+      playSound?.(220, 'square', 0.2);
       addLog('[DATA VALIDATION ERROR] Input must be a positive non-zero numeric value.', 'error');
       return;
     }
 
     if (pendingAction === 'withdraw') {
       if (amt > balance) {
-        playSound(220, 'square', 0.2);
+        playSound?.(220, 'square', 0.2);
         addLog(`[TRANSACTION DECLINED] Insufficient balance! Requested: ₹${amt.toLocaleString()}, Available: ₹${balance.toLocaleString()}`, 'error');
       } else {
-        playSound(850, 'sine', 0.2);
+        playSound?.(850, 'sine', 0.2);
         setBalance(prev => prev - amt);
         addLog(`[SUCCESS] Dispensed ₹${amt.toLocaleString()}. Updated Balance: ₹${(balance - amt).toLocaleString()}`, 'success');
       }
     } else if (pendingAction === 'deposit') {
-      playSound(900, 'sine', 0.2);
+      playSound?.(900, 'sine', 0.2);
       setBalance(prev => prev + amt);
       addLog(`[SUCCESS] Deposited ₹${amt.toLocaleString()}. Updated Balance: ₹${(balance + amt).toLocaleString()}`, 'success');
     }
@@ -104,7 +103,7 @@ export const Projects = ({ playSound }) => {
   };
 
   const resetAtm = () => {
-    playSound(500, 'sine', 0.08);
+    playSound?.(500, 'sine', 0.08);
     setIsAuthenticated(false);
     setAttempts(0);
     setBalance(25000.00);
