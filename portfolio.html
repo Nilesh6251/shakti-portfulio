@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shakti Singh Thakur | Cyber Neo-Brutalist Developer & Data Analytics Portfolio</title>
+  <meta name="description" content="Portfolio of Shakti Singh Thakur — IT Student & Aspiring Data Analyst. Specializing in C++, Data Analytics, Power BI, and Oracle Cloud Infrastructure (OCI)." />
+  <meta name="keywords" content="Shakti Singh Thakur, Data Analyst, C++, Power BI, OCI, Oracle Cloud, Bansal Institute, Bhopal, Portfolio" />
+  <meta name="author" content="Shakti Singh Thakur" />
+
+  <!-- Google Fonts: Space Grotesk, JetBrains Mono & Syne -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800;900&family=Syne:wght@700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0a0a0e',
+            surface: '#12131a',
+            surfaceLight: '#1a1b26',
+            electricBlue: '#3b82f6',
+            cyberPurple: '#8b5cf6',
+            amberGold: '#f59e0b',
+            crimsonRed: '#ef4444',
+            cyberCyan: '#06b6d4',
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            sans: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'brutal-sm': '3px 3px 0px #000000',
+            'brutal': '5px 5px 0px #000000',
+            'brutal-lg': '6px 6px 0px #000000',
+            'brutal-xl': '8px 8px 0px #000000',
+            'brutal-blue': '6px 6px 0px #3b82f6',
+            'brutal-purple': '6px 6px 0px #8b5cf6',
+            'brutal-amber': '6px 6px 0px #f59e0b',
+          },
+          animation: {
+            'marquee': 'marquee 25s linear infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            }
+          }
+        },
+      },
+    };
+  </script>
+
+  <style>
+    :root {
+      --bg-dark: #0a0a0e;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: #f1f5f9;
+      font-family: 'Space Grotesk', sans-serif;
+      overflow-x: hidden;
+      selection-background-color: #3b82f6;
+      selection-color: #ffffff;
+    }
+
+    ::selection {
+      background-color: #3b82f6;
+      color: #ffffff;
+    }
+
+    /* Cyber Dot Matrix Backdrop */
+    .cyber-dot-matrix {
+      background-image: radial-gradient(rgba(59, 130, 246, 0.12) 1.5px, transparent 1.5px);
+      background-size: 26px 26px;
+    }
+
+    .cyber-grid-line {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(139, 92, 246, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(139, 92, 246, 0.04) 1px, transparent 1px);
+    }
+
+    /* Cyber Neo-Brutalist Card Classes (STRICTLY NO GREEN) */
+    .brutal-card-blue {
+      border: 2.5px solid #3b82f6;
+      background-color: #12131a;
+      box-shadow: 6px 6px 0px #000000;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .brutal-card-blue:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 8px 8px 0px #3b82f6;
+    }
+
+    .brutal-card-purple {
+      border: 2.5px solid #8b5cf6;
+      background-color: #12131a;
+      box-shadow: 6px 6px 0px #000000;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .brutal-card-purple:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 8px 8px 0px #8b5cf6;
+    }
+
+    .brutal-card-amber {
+      border: 2.5px solid #f59e0b;
+      background-color: #12131a;
+      box-shadow: 6px 6px 0px #000000;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .brutal-card-amber:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 8px 8px 0px #f59e0b;
+    }
+
+    .brutal-card-dark {
+      border: 2.5px solid #272738;
+      background-color: #12131a;
+      box-shadow: 6px 6px 0px #000000;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .brutal-card-dark:hover {
+      border-color: #3b82f6;
+      transform: translate(-3px, -3px);
+      box-shadow: 8px 8px 0px #3b82f6;
+    }
+
+    /* Neo-Brutalist Buttons */
+    .btn-brutal-blue {
+      border: 2.5px solid #000000;
+      background-color: #3b82f6;
+      color: #ffffff;
+      font-weight: 700;
+      box-shadow: 4px 4px 0px #000000;
+      transition: all 0.15s ease-in-out;
+    }
+
+    .btn-brutal-blue:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0px #000000;
+      background-color: #60a5fa;
+    }
+
+    .btn-brutal-blue:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px #000000;
+    }
+
+    .btn-brutal-purple {
+      border: 2.5px solid #8b5cf6;
+      background-color: #12131a;
+      color: #c4b5fd;
+      font-weight: 700;
+      box-shadow: 4px 4px 0px #000000;
+      transition: all 0.15s ease-in-out;
+    }
+
+    .btn-brutal-purple:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #8b5cf6;
+      background-color: #8b5cf6;
+      color: #ffffff;
+    }
+
+    .btn-brutal-purple:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px #8b5cf6;
+    }
+
+    /* Terminal Scrollbars */
+    .terminal-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+    .terminal-scroll::-webkit-scrollbar-track {
+      background: #0a0a0e;
+    }
+    .terminal-scroll::-webkit-scrollbar-thumb {
+      background: #272738;
+      border: 1px solid #000000;
+    }
+    .terminal-scroll::-webkit-scrollbar-thumb:hover {
+      background: #3b82f6;
+    }
+
+    /* Blinking Caret */
+    .cursor-blink {
+      display: inline-block;
+      width: 8px;
+      height: 18px;
+      background-color: #3b82f6;
+      vertical-align: middle;
+      animation: blink 0.9s steps(2, start) infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body class="bg-obsidian text-slate-100 min-h-screen cyber-dot-matrix relative antialiased">
+
+  <!-- Ambient Glow Backdrops (Electric Blue & Cyber Purple, Strictly No Green) -->
+  <div class="fixed top-10 left-10 w-96 h-96 bg-electricBlue/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+  <div class="fixed top-1/2 right-10 w-96 h-96 bg-cyberPurple/10 rounded-full blur-[150px] pointer-events-none -z-10"></div>
+  <div class="fixed bottom-10 left-1/3 w-80 h-80 bg-amberGold/5 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+
+  <!-- Top Announcement Marquee Ticker -->
+  <div class="bg-electricBlue text-white border-b-2.5 border-black font-mono text-xs font-bold py-1.5 overflow-hidden whitespace-nowrap select-none">
+    <div class="inline-block animate-marquee uppercase tracking-wider">
+      <span>⚡ AVAILABLE FOR DATA ANALYST & C++ ROLES</span>
+      <span class="mx-4 font-black">///</span>
+      <span>ORACLE CLOUD INFRASTRUCTURE (OCI) CERTIFIED (NOV 2025)</span>
+      <span class="mx-4 font-black">///</span>
+      <span>MICROSOFT POWER BI & DATA VALIDATION</span>
+      <span class="mx-4 font-black">///</span>
+      <span>BANSAL INSTITUTE OF SCIENCE & TECHNOLOGY, BHOPAL (2024–2028)</span>
+      <span class="mx-4 font-black">///</span>
+      <span>EMAIL: SSTHAKUR6262@GMAIL.COM</span>
+      <span class="mx-4 font-black">///</span>
+      <span>⚡ AVAILABLE FOR DATA ANALYST & C++ ROLES</span>
+      <span class="mx-4 font-black">///</span>
+      <span>ORACLE CLOUD INFRASTRUCTURE (OCI) CERTIFIED (NOV 2025)</span>
+      <span class="mx-4 font-black">///</span>
+    </div>
+  </div>
+
+  <!-- Sticky Header Navigation -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-obsidian/90 border-b-2.5 border-black px-4 sm:px-8 py-3.5">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Logo Badge -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 bg-electricBlue text-white border-2 border-black font-mono font-black flex items-center justify-center text-base shadow-brutal-sm group-hover:-translate-y-0.5 transition-transform">
+          ST
+        </div>
+        <div>
+          <div class="font-display font-black tracking-tight text-lg sm:text-xl flex items-center gap-1.5 text-white">
+            SHAKTI<span class="text-electricBlue">.DEV</span>
+            <span class="hidden md:inline-block text-[10px] font-mono bg-surfaceLight text-electricBlue px-2 py-0.5 border border-black font-bold uppercase">
+              IT 2024–28
+            </span>
+          </div>
+          <p class="text-[11px] font-mono text-slate-400 -mt-0.5 hidden sm:block">
+            Data Analyst & C++ Developer
+          </p>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links (Neo-Brutalist Buttons) -->
+      <nav class="hidden lg:flex items-center gap-2.5 font-mono text-xs font-bold">
+        <a href="#about" class="px-3.5 py-1.5 bg-surface border-2 border-black shadow-brutal-sm text-slate-200 hover:text-white hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-blue transition-all flex items-center gap-1.5">
+          <span class="text-electricBlue font-black">01.</span> ABOUT
+        </a>
+        <a href="#education" class="px-3.5 py-1.5 bg-surface border-2 border-black shadow-brutal-sm text-slate-200 hover:text-white hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-blue transition-all flex items-center gap-1.5">
+          <span class="text-cyberCyan font-black">02.</span> EDUCATION
+        </a>
+        <a href="#skills" class="px-3.5 py-1.5 bg-surface border-2 border-black shadow-brutal-sm text-slate-200 hover:text-white hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-blue transition-all flex items-center gap-1.5">
+          <span class="text-cyberPurple font-black">03.</span> SKILLS
+        </a>
+        <a href="#projects" class="px-3.5 py-1.5 bg-surface border-2 border-black shadow-brutal-sm text-slate-200 hover:text-white hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-blue transition-all flex items-center gap-1.5">
+          <span class="text-amberGold font-black">04.</span> PROJECTS
+        </a>
+        <a href="#certifications" class="px-3.5 py-1.5 bg-surface border-2 border-black shadow-brutal-sm text-slate-200 hover:text-white hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-blue transition-all flex items-center gap-1.5">
+          <span class="text-electricBlue font-black">05.</span> CERTS
+        </a>
+        <a href="#contact" class="px-3.5 py-1.5 bg-surface border-2 border-black shadow-brutal-sm text-slate-200 hover:text-white hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-blue transition-all flex items-center gap-1.5">
+          <span class="text-cyberCyan font-black">06.</span> CONTACT
+        </a>
+      </nav>
+
+      <!-- Right CTAs -->
+      <div class="flex items-center gap-3">
+        <a 
+          href="resume.pdf" 
+          download="Shakti_Singh_Thakur_Resume.pdf"
+          class="btn-brutal-blue px-4 py-2 font-mono text-xs font-bold flex items-center gap-1.5"
+        >
+          <i data-lucide="download" class="w-3.5 h-3.5"></i>
+          <span>RESUME</span>
+        </a>
+
+        <a 
+          href="https://www.linkedin.com/in/shakti-singh--thakur" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="hidden sm:flex btn-brutal-purple px-3.5 py-2 font-mono text-xs font-bold items-center gap-1.5"
+        >
+          <i data-lucide="linkedin" class="w-3.5 h-3.5"></i>
+          <span>CONNECT</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN BODY SECTIONS -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-8 py-10 md:py-16 space-y-24">
+
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="relative pt-4">
+      
+      <!-- Top Badge -->
+      <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-surface border-2 border-black shadow-brutal-sm font-mono text-xs text-electricBlue font-bold mb-6">
+        <span class="w-2 h-2 rounded-full bg-electricBlue animate-ping"></span>
+        <span>⚡ ASPIRING DATA ANALYST & C++ DEVELOPER</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="space-y-2">
+            <p class="font-mono text-xs tracking-widest text-slate-400 uppercase font-bold flex items-center gap-2">
+              <span class="text-electricBlue font-black">&gt;&gt;&gt;</span> WELCOME TO MY PORTFOLIO
+            </p>
+            <h1 class="text-4xl sm:text-6xl xl:text-7xl font-display font-black tracking-tight leading-[0.95] text-white">
+              SHAKTI <br />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-electricBlue via-cyberPurple to-cyberCyan drop-shadow-[4px_4px_0px_#000000]">
+                SINGH THAKUR
+              </span>
+            </h1>
+            <p class="text-base sm:text-lg font-mono font-bold text-cyberCyan pt-1 flex items-center gap-2 flex-wrap">
+              <span>Frontend Developer</span>
+              <span class="text-slate-500">•</span>
+              <span class="text-electricBlue">AI-Assisted Engineer</span>
+              <span class="text-slate-500">•</span>
+              <span class="text-cyberPurple">Data Analyst</span>
+            </p>
+          </div>
+
+          <!-- Quick Neo Pill Badges -->
+          <div class="flex flex-wrap gap-2.5 pt-1 font-mono text-xs">
+            <span class="px-3 py-1.5 bg-surface border-2 border-black text-cyberCyan font-bold shadow-brutal-sm flex items-center gap-1.5 hover:-translate-y-0.5 transition-transform">
+              <i data-lucide="layout" class="w-3.5 h-3.5"></i> Frontend Dev (React/JS)
+            </span>
+            <span class="px-3 py-1.5 bg-surface border-2 border-black text-electricBlue font-bold shadow-brutal-sm flex items-center gap-1.5 hover:-translate-y-0.5 transition-transform">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Using AI &amp; Prompt Eng.
+            </span>
+            <span class="px-3 py-1.5 bg-surface border-2 border-black text-cyberPurple font-bold shadow-brutal-sm flex items-center gap-1.5 hover:-translate-y-0.5 transition-transform">
+              <i data-lucide="cpu" class="w-3.5 h-3.5"></i> C / C++ Core
+            </span>
+            <span class="px-3 py-1.5 bg-surface border-2 border-black text-amberGold font-bold shadow-brutal-sm flex items-center gap-1.5 hover:-translate-y-0.5 transition-transform">
+              <i data-lucide="pie-chart" class="w-3.5 h-3.5"></i> Power BI Dashboards
+            </span>
+            <span class="px-3 py-1.5 bg-surface border-2 border-black text-slate-300 font-bold shadow-brutal-sm flex items-center gap-1.5 hover:-translate-y-0.5 transition-transform">
+              <i data-lucide="cloud" class="w-3.5 h-3.5"></i> Oracle Cloud (OCI)
+            </span>
+          </div>
+
+          <!-- Hero Bio Description -->
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed font-sans border-l-4 border-electricBlue pl-4 py-1 bg-surface/60">
+            Information Technology undergraduate at <strong class="text-white font-bold">Bansal Institute of Science &amp; Technology</strong>. 
+            I engineer interactive, responsive interfaces as a <strong class="text-cyberCyan font-bold">Frontend Developer</strong>, 
+            accelerate problem solving <strong class="text-electricBlue font-bold">using AI &amp; LLM workflows</strong>, 
+            and implement disciplined <strong class="text-white font-bold">C/C++ algorithms</strong> alongside <strong class="text-amberGold font-bold">Power BI data analytics</strong>.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-2 font-mono">
+            <a href="#projects" class="btn-brutal-blue px-6 py-3.5 text-sm sm:text-base font-bold flex items-center gap-2">
+              <i data-lucide="folder-code" class="w-4 h-4"></i>
+              <span>VIEW PROJECTS</span>
+            </a>
+
+            <a 
+              href="https://www.linkedin.com/in/shakti-singh--thakur" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="btn-brutal-purple px-6 py-3.5 text-sm sm:text-base font-bold flex items-center gap-2"
+            >
+              <i data-lucide="linkedin" class="w-4 h-4"></i>
+              <span>CONNECT LINKEDIN</span>
+            </a>
+
+            <button 
+              onclick="copyEmail()" 
+              class="px-4 py-3.5 bg-surface border-2 border-black font-mono text-xs sm:text-sm font-bold shadow-brutal hover:-translate-y-0.5 hover:shadow-brutal-blue transition-all flex items-center gap-2 text-slate-300 hover:text-white"
+            >
+              <i data-lucide="copy" class="w-4 h-4 text-electricBlue"></i>
+              <span id="copyEmailHeroBtn">COPY EMAIL</span>
+            </button>
+          </div>
+
+          <!-- Quick Metrics Bar -->
+          <div class="grid grid-cols-3 gap-3 pt-3 font-mono">
+            <div class="p-3 bg-surface border-2 border-black shadow-brutal-sm text-center">
+              <div class="text-xl sm:text-2xl font-black text-electricBlue">2024–28</div>
+              <div class="text-[10px] sm:text-xs text-slate-400 font-bold uppercase">B.Tech IT Cohort</div>
+            </div>
+            <div class="p-3 bg-surface border-2 border-black shadow-brutal-sm text-center">
+              <div class="text-xl sm:text-2xl font-black text-cyberPurple">3x</div>
+              <div class="text-[10px] sm:text-xs text-slate-400 font-bold uppercase">Certifications</div>
+            </div>
+            <div class="p-3 bg-surface border-2 border-black shadow-brutal-sm text-center">
+              <div class="text-xl sm:text-2xl font-black text-amberGold">100%</div>
+              <div class="text-[10px] sm:text-xs text-slate-400 font-bold uppercase">Verified Logic</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Hero: Permanent Photo Showcase & Interactive Live CLI Terminal -->
+        <div class="lg:col-span-5 w-full space-y-6">
+          
+          <!-- PERMANENT PHOTO SHOWCASE (No Upload Buttons, Permanent Placement) -->
+          <div class="brutal-card-blue p-5 flex flex-col sm:flex-row items-center gap-5">
+            
+            <!-- Large Photo Frame with Permanent Image -->
+            <div class="w-48 h-56 sm:w-52 sm:h-64 shrink-0 rounded-2xl border-2 border-slate-700 bg-obsidian shadow-2xl overflow-hidden relative group">
+              <img 
+                src="profile.png" 
+                alt="Shakti Singh Thakur" 
+                class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                onerror="this.onerror=null; this.src='profile.jpg'; if(!this.src) this.src='public/public.png';"
+              />
+              <div class="absolute inset-x-0 bottom-0 bg-slate-950/90 py-2 px-3 border-t border-slate-800 text-center font-mono text-[11px] font-bold text-cyan-400">
+                SHAKTI SINGH THAKUR
+              </div>
+            </div>
+
+            <!-- Social Links & Verification Directly Attached to Photo -->
+            <div class="space-y-3 text-center sm:text-left flex-1 font-mono">
+              <div>
+                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 uppercase">
+                  B.Tech IT &bull; Bansal Institute
+                </span>
+                <h3 class="text-xl font-bold text-white font-sans mt-2">
+                  Shakti Singh Thakur
+                </h3>
+                <p class="text-xs text-slate-300 font-mono font-semibold">
+                  Frontend Dev &bull; AI Tools &bull; Data Analyst
+                </p>
+                <p class="text-xs text-slate-400 flex items-center justify-center sm:justify-start gap-1.5 mt-1.5">
+                  <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-400"></i> Bhopal, MP, India
+                </p>
+              </div>
+
+              <!-- Neo-Brutalist Action Buttons on Photo Card -->
+              <div class="grid grid-cols-2 gap-2.5 pt-2">
+                <a 
+                  href="https://github.com/Shaktithakur" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="py-2.5 px-3 bg-obsidian border-2.5 border-black text-xs font-black text-cyberCyan shadow-brutal-sm hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-blue hover:bg-black transition-all flex items-center justify-center gap-1.5 uppercase tracking-wider"
+                >
+                  <i data-lucide="github" class="w-4 h-4 text-cyberCyan"></i>
+                  <span>GITHUB</span>
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/shakti-singh--thakur" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="py-2.5 px-3 bg-electricBlue border-2.5 border-black text-xs font-black text-white shadow-brutal-sm hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-purple transition-all flex items-center justify-center gap-1.5 uppercase tracking-wider"
+                >
+                  <i data-lucide="linkedin" class="w-4 h-4 text-white"></i>
+                  <span>LINKEDIN</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Interactive Live CLI Terminal Widget (Cyber Neo-Brutalist) -->
+          <div class="border-2.5 border-black bg-surface shadow-brutal-lg overflow-hidden">
+            
+            <div class="bg-black px-4 py-2 border-b-2 border-black flex items-center justify-between">
+              <div class="flex items-center gap-2 font-mono text-xs">
+                <span class="w-3 h-3 rounded-full bg-crimsonRed inline-block border border-black"></span>
+                <span class="w-3 h-3 rounded-full bg-amberGold inline-block border border-black"></span>
+                <span class="w-3 h-3 rounded-full bg-electricBlue inline-block border border-black"></span>
+                <span class="text-slate-300 font-bold ml-2">shakti@system:~ (zsh)</span>
+              </div>
+              <span class="font-mono text-[10px] text-electricBlue font-bold border border-electricBlue/40 px-2 py-0.5 bg-electricBlue/10">
+                LIVE CLI
+              </span>
+            </div>
+
+            <div class="p-4 bg-obsidian font-mono text-xs sm:text-sm text-slate-300 space-y-2.5 min-h-[170px]">
+              <div>
+                <span class="text-electricBlue font-bold">visitor@portfolio:~$</span>
+                <span id="heroTypingCmd" class="text-white font-semibold"></span><span class="cursor-blink"></span>
+              </div>
+              <div class="text-slate-400 text-xs border-l-2 border-electricBlue/60 pl-3 py-1 space-y-1">
+                <p><span class="text-electricBlue font-bold">&gt; Focus:</span> Structured C++ Algorithms & Power BI</p>
+                <p><span class="text-electricBlue font-bold">&gt; Degree:</span> B.Tech in Information Technology</p>
+                <p><span class="text-electricBlue font-bold">&gt; Cloud:</span> Oracle Cloud Infrastructure (OCI) Nov 2025</p>
+                <p><span class="text-electricBlue font-bold">&gt; Status:</span> Ready for technical evaluation</p>
+              </div>
+            </div>
+
+            <!-- Terminal Run Buttons -->
+            <div class="p-2.5 bg-surface border-t-2 border-black flex flex-wrap gap-2 text-xs font-mono">
+              <span class="text-slate-400 text-[11px] font-bold self-center">RUN:</span>
+              <button onclick="runHeroCmd('skills')" class="px-2 py-1 bg-obsidian border border-slate-700 hover:border-electricBlue hover:text-electricBlue font-bold">
+                $ skills
+              </button>
+              <button onclick="runHeroCmd('projects')" class="px-2 py-1 bg-obsidian border border-slate-700 hover:border-cyberPurple hover:text-cyberPurple font-bold">
+                $ mini_atm
+              </button>
+              <button onclick="runHeroCmd('contact')" class="px-2 py-1 bg-obsidian border border-slate-700 hover:border-amberGold hover:text-amberGold font-bold">
+                $ contact
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 2. CAREER OBJECTIVE SECTION -->
+    <section id="about" class="space-y-6">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-electricBlue text-white border-2 border-black font-mono font-black flex items-center justify-center text-sm shadow-brutal-sm">
+          01
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-display font-black tracking-tight text-white uppercase">
+          Career Objective & Mission
+        </h2>
+      </div>
+
+      <div class="brutal-card-blue p-6 sm:p-8 relative">
+        <div class="font-mono text-xs text-electricBlue font-bold uppercase tracking-wider mb-2 flex items-center gap-2">
+          <i data-lucide="target" class="w-4 h-4"></i> Professional Mission Statement
+        </div>
+
+        <blockquote class="text-lg sm:text-xl font-sans font-semibold leading-relaxed text-white italic border-l-4 border-electricBlue pl-4 my-4">
+          "To obtain a challenging <span class="text-electricBlue underline decoration-2 underline-offset-4 font-bold">Data Analyst</span> position in a dynamic and innovative organization where I can leverage my technical, analytical, and structured programming skills."
+        </blockquote>
+
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-sans pt-2">
+          Driven by curiosity for data patterns and computational precision, I combine rigorous foundational C/C++ programming fundamentals with contemporary analytics tools like Microsoft Power BI and enterprise-grade Oracle Cloud Infrastructure. My objective is to bridge raw data streams into actionable business intelligence through verified logic, data integrity validation, and insightful visual reporting.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- 3. EDUCATION BLOCK (ONLY BANSAL INSTITUTE WITH CGPA 5.57 / 10) -->
+    <section id="education" class="space-y-6">
+      
+      <div class="flex items-center justify-between flex-wrap gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-cyberPurple text-white border-2 border-black font-mono font-black flex items-center justify-center text-sm shadow-brutal-sm">
+            02
+          </div>
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-display font-black tracking-tight text-white uppercase">
+              Academic Degree & Institute
+            </h2>
+            <p class="font-mono text-xs text-slate-400">Undergraduate engineering degree from Bansal Institute of Science & Technology</p>
+          </div>
+        </div>
+
+        <span class="font-mono text-xs px-3 py-1 bg-surface border-2 border-black text-cyberPurple font-bold shadow-brutal-sm">
+          ENGINEERING DEGREE
+        </span>
+      </div>
+
+      <div class="brutal-card-purple p-6 sm:p-8 relative">
+        
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+          
+          <div class="md:col-span-8 space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-xs px-2.5 py-0.5 bg-cyberPurple/20 text-cyberPurple font-bold border border-cyberPurple">
+                2024 — 2028 (Undergraduate Cohort)
+              </span>
+              <span class="font-mono text-xs px-2.5 py-0.5 bg-amberGold/20 text-amberGold font-bold border border-amberGold flex items-center gap-1">
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-amberGold"></i> CGPA: 5.57 / 10
+              </span>
+            </div>
+
+            <h3 class="text-2xl sm:text-3xl font-display font-black text-white">
+              Bansal Institute of Science & Technology
+            </h3>
+
+            <p class="text-xs font-mono text-slate-400 flex items-center gap-1.5">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-crimsonRed"></i> Bhopal, Madhya Pradesh, India
+            </p>
+
+            <div class="text-sm font-sans font-bold text-electricBlue pt-1">
+              Bachelor of Technology (B.Tech) in Information Technology
+            </div>
+
+            <div class="space-y-1.5 font-mono text-xs text-slate-300 pt-2">
+              <div class="flex items-center gap-2">
+                <span class="text-cyberPurple font-bold">&gt;&gt;</span> Core focus on Data Structures, Algorithms & Database Systems
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-cyberPurple font-bold">&gt;&gt;</span> Structured C & C++ Programming Foundations
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-cyberPurple font-bold">&gt;&gt;</span> Information Technology Engineering Curriculum
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-4 p-4 bg-obsidian border-2 border-black shadow-brutal-sm space-y-3 font-mono text-xs">
+            <div class="text-slate-400 uppercase font-bold text-[11px] border-b border-slate-800 pb-2">
+              ACADEMIC HIGHLIGHTS
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400">Duration:</span>
+              <span class="text-white font-bold">2024 – 2028</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400">Academic Score:</span>
+              <span class="text-amberGold font-bold">CGPA 5.57 / 10</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400">Discipline:</span>
+              <span class="text-electricBlue font-bold">IT Department</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400">Location:</span>
+              <span class="text-white font-bold">Bhopal, MP</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 4. SKILLS MATRIX & ANALYTICAL CAPABILITIES -->
+    <section id="skills" class="space-y-6">
+      
+      <div class="flex items-center justify-between flex-wrap gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-amberGold text-black border-2 border-black font-mono font-black flex items-center justify-center text-sm shadow-brutal-sm">
+            03
+          </div>
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-display font-black tracking-tight text-white uppercase">
+              Skills Matrix & Analytical Capabilities
+            </h2>
+            <p class="font-mono text-xs text-slate-400">Programming Languages, Web Fundamentals, and Analytics & Cloud Stacks</p>
+          </div>
+        </div>
+
+        <span class="font-mono text-xs px-3 py-1 bg-surface border-2 border-black text-amberGold font-bold shadow-brutal-sm">
+          SOLID PROGRESS BLOCKS
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+        
+        <!-- Category 1: Frontend Development -->
+        <div class="brutal-card-blue p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 bg-cyberCyan/20 text-cyberCyan border-2 border-black flex items-center justify-center font-mono font-black text-lg shadow-brutal-sm">
+                &lt;/&gt;
+              </div>
+              <span class="text-[10px] font-mono px-2 py-0.5 bg-cyberCyan text-black font-bold border border-black uppercase">
+                Frontend
+              </span>
+            </div>
+
+            <h3 class="text-xl font-display font-black text-white mb-1">
+              Frontend Development
+            </h3>
+            <p class="text-xs font-mono text-slate-400 mb-4">Modern UI, React &amp; Responsive Web Architecture</p>
+
+            <div class="space-y-4 font-mono text-xs">
+              <!-- Frontend Engineering -->
+              <div class="p-3 bg-obsidian border-2 border-black shadow-brutal-sm">
+                <div class="flex justify-between items-center mb-1.5 font-bold">
+                  <span class="text-cyberCyan flex items-center gap-1.5">
+                    <i data-lucide="layout" class="w-3.5 h-3.5"></i> Frontend &amp; React Dev
+                  </span>
+                  <span class="text-slate-300">Core</span>
+                </div>
+                <div class="w-full bg-slate-800 h-2.5 border border-black overflow-hidden">
+                  <div class="bg-cyberCyan h-full w-[90%]"></div>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-1.5 font-sans">Component-driven architecture, interactive UI, state handling &amp; styling.</p>
+              </div>
+
+              <!-- HTML5 & Modern CSS -->
+              <div class="p-3 bg-obsidian border-2 border-black shadow-brutal-sm">
+                <div class="flex justify-between items-center mb-1.5 font-bold">
+                  <span class="text-cyberCyan flex items-center gap-1.5">
+                    <i data-lucide="file-code" class="w-3.5 h-3.5"></i> HTML5 &amp; Modern CSS
+                  </span>
+                  <span class="text-slate-300">Mastery</span>
+                </div>
+                <div class="w-full bg-slate-800 h-2.5 border border-black overflow-hidden">
+                  <div class="bg-cyberCyan h-full w-[95%]"></div>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-1.5 font-sans">Semantic layout, accessible markup, flexbox/grid, animations &amp; responsive UI.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-800 flex flex-wrap gap-1.5 font-mono text-[10px]">
+            <span class="px-2 py-0.5 bg-surfaceLight border border-black text-slate-300">#FrontendDev</span>
+            <span class="px-2 py-0.5 bg-surfaceLight border border-black text-slate-300">#ReactJS</span>
+            <span class="px-2 py-0.5 bg-surfaceLight border border-black text-slate-300">#ModernCSS</span>
+          </div>
+        </div>
+
+        <!-- Category 2: Using AI & Prompt Engineering -->
+        <div class="brutal-card-purple p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 bg-electricBlue/20 text-electricBlue border-2 border-black flex items-center justify-center font-mono font-black text-lg shadow-brutal-sm">
+                AI
+              </div>
+              <span class="text-[10px] font-mono px-2 py-0.5 bg-electricBlue text-white font-bold border border-black uppercase">
+                AI Stack
+              </span>
+            </div>
+
+            <h3 class="text-xl font-display font-black text-white mb-1">
+              Using AI &amp; Prompt Engineering
+            </h3>
+            <p class="text-xs font-mono text-slate-400 mb-4">AI-Assisted Workflows, LLM Tooling &amp; Velocity</p>
+
+            <div class="space-y-4 font-mono text-xs">
+              <!-- Using AI -->
+              <div class="p-3 bg-obsidian border-2 border-black shadow-brutal-sm">
+                <div class="flex justify-between items-center mb-1.5 font-bold">
+                  <span class="text-electricBlue flex items-center gap-1.5">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> AI-Assisted Development
+                  </span>
+                  <span class="text-slate-300">Advanced</span>
+                </div>
+                <div class="w-full bg-slate-800 h-2.5 border border-black overflow-hidden">
+                  <div class="bg-electricBlue h-full w-[92%]"></div>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-1.5 font-sans">Using LLM coding agents, Copilot, rapid prototyping &amp; code auditing.</p>
+              </div>
+
+              <!-- Prompt Engineering -->
+              <div class="p-3 bg-obsidian border-2 border-black shadow-brutal-sm">
+                <div class="flex justify-between items-center mb-1.5 font-bold">
+                  <span class="text-electricBlue flex items-center gap-1.5">
+                    <i data-lucide="bot" class="w-3.5 h-3.5"></i> Prompt Engineering
+                  </span>
+                  <span class="text-slate-300">Specialist</span>
+                </div>
+                <div class="w-full bg-slate-800 h-2.5 border border-black overflow-hidden">
+                  <div class="bg-electricBlue h-full w-[90%]"></div>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-1.5 font-sans">Context optimization, zero-shot/few-shot prompts, structured outputs &amp; debugging.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-800 flex flex-wrap gap-1.5 font-mono text-[10px]">
+            <span class="px-2 py-0.5 bg-surfaceLight border border-black text-slate-300">#UsingAI</span>
+            <span class="px-2 py-0.5 bg-surfaceLight border border-black text-slate-300">#PromptEngineering</span>
+            <span class="px-2 py-0.5 bg-surfaceLight border border-black text-slate-300">#AIAssisted</span>
+          </div>
+        </div>
+
+        <!-- Category 3: Programming Languages -->
+        <div class="brutal-card-blue p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 bg-cyberPurple/20 text-cyberPurple border-2 border-black flex items-center justify-center font-mono font-black text-lg shadow-brutal-sm">
+                C++
+              </div>
+              <span class="text-[10px] font-mono px-2 py-0.5 bg-cyberPurple text-white font-bold border border-black uppercase">
+                Languages
+              </span>
+            </div>
+
+            <h3 class="text-xl font-display font-black text-white mb-1">
+              Programming Languages
+            </h3>
+            <p class="text-xs font-mono text-slate-400 mb-4">Core Structured &amp; Systems Coding</p>
+
+            <div class="space-y-4 font-mono text-xs">
+              <!-- C++ Skill -->
+              <div class="p-3 bg-obsidian border-2 border-black shadow-brutal-sm">
+                <div class="flex justify-between items-center mb-1.5 font-bold">
+                  <span class="text-cyberPurple flex items-center gap-1.5">
+                    <i data-lucide="code" class="w-3.5 h-3.5"></i> C++ Programming
+                  </span>
+                  <span class="text-slate-300">Certified</span>
+                </div>
+                <div class="w-full bg-slate-800 h-2.5 border border-black overflow-hidden">
+                  <div class="bg-cyberPurple h-full w-[85%]"></div>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-1.5 font-sans">OOP logic, pointers, memory models, console architecture &amp; validation.</p>
+              </div>
+
+              <!-- C Skill -->
+              <div class="p-3 bg-obsidian border-2 border-black shadow-brutal-sm">
+                <div class="flex justify-between items-center mb-1.5 font-bold">
+                  <span class="text-cyberPurple flex items-center gap-1.5">
+                    <i data-lucide="cpu" class="w-3.5 h-3.5"></i> C Language
+                  </span>
+                  <span class="text-slate-300">Core</span>
+                </div>
+                <div class="w-full bg-slate-800 h-2.5 border border-black overflow-hidden">
+                  <div class="bg-cyberPurple h-full w-[80%]"></div>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-1.5 font-sans">Procedural programming, pointers, structured algorithms, memory flow.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-800 flex flex-wrap gap-1.5 font-mono text-[10px]">
+            <span class="px-2 py-0.5 bg-surfaceLight border border-black text-slate-300">#OOP</span>
+            <span class="px-2 py-0.5 bg-surfaceLight border border-black text-slate-300">#Pointers</span>
+            <span class="px-2 py-0.5 bg-surfaceLight border border-black text-slate-300">#Algorithms</span>
+          </div>
+        </div>
+
+        <!-- Category 4: Analytics & Cloud Focus -->
+        <div class="brutal-card-amber p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 bg-amberGold/20 text-amberGold border-2 border-black flex items-center justify-center font-mono font-black text-lg shadow-brutal-sm">
+                BI
+              </div>
+              <span class="text-[10px] font-mono px-2 py-0.5 bg-amberGold text-black font-bold border border-black uppercase">
+                Analytics
+              </span>
+            </div>
+
+            <h3 class="text-xl font-display font-black text-white mb-1">
+              Cloud &amp; Analytics Focus
+            </h3>
+            <p class="text-xs font-mono text-slate-400 mb-4">Business Intelligence &amp; Cloud Infrastructure</p>
+
+            <div class="space-y-4 font-mono text-xs">
+              <!-- Power BI -->
+              <div class="p-3 bg-obsidian border-2 border-black shadow-brutal-sm">
+                <div class="flex justify-between items-center mb-1.5 font-bold">
+                  <span class="text-amberGold flex items-center gap-1.5">
+                    <i data-lucide="bar-chart-2" class="w-3.5 h-3.5"></i> Microsoft Power BI
+                  </span>
+                  <span class="text-slate-300">Certified</span>
+                </div>
+                <div class="w-full bg-slate-800 h-2.5 border border-black overflow-hidden">
+                  <div class="bg-amberGold h-full w-[85%]"></div>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-1.5 font-sans">Interactive dashboards, Power Query ETL, visual metrics &amp; business KPIs.</p>
+              </div>
+
+              <!-- Oracle Cloud OCI -->
+              <div class="p-3 bg-obsidian border-2 border-black shadow-brutal-sm">
+                <div class="flex justify-between items-center mb-1.5 font-bold">
+                  <span class="text-amberGold flex items-center gap-1.5">
+                    <i data-lucide="cloud" class="w-3.5 h-3.5"></i> Oracle Cloud (OCI)
+                  </span>
+                  <span class="text-slate-300">Certified</span>
+                </div>
+                <div class="w-full bg-slate-800 h-2.5 border border-black overflow-hidden">
+                  <div class="bg-amberGold h-full w-[80%]"></div>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-1.5 font-sans">Cloud architecture, Compute, VCN networking, IAM security &amp; storage.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-800 flex flex-wrap gap-1.5 font-mono text-[10px]">
+            <span class="px-2 py-0.5 bg-surfaceLight border border-black text-slate-300">#PowerBI</span>
+            <span class="px-2 py-0.5 bg-surfaceLight border border-black text-slate-300">#OracleOCI</span>
+            <span class="px-2 py-0.5 bg-surfaceLight border border-black text-slate-300">#Validation</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 5. FEATURED PROJECTS SHOWCASE -->
+    <section id="projects" class="space-y-6">
+      
+      <div class="flex items-center justify-between flex-wrap gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-electricBlue text-white border-2 border-black font-mono font-black flex items-center justify-center text-sm shadow-brutal-sm">
+            04
+          </div>
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-display font-black tracking-tight text-white uppercase">
+              Featured Engineering Project
+            </h2>
+            <p class="font-mono text-xs text-slate-400">Structured C++ Financial Application with Strict Data Validation</p>
+          </div>
+        </div>
+
+        <span class="font-mono text-xs px-3 py-1 bg-surface border-2 border-black text-electricBlue font-bold shadow-brutal-sm">
+          CONSOLE C++ APPLICATION
+        </span>
+      </div>
+
+      <!-- Main Project Neo Card -->
+      <div class="brutal-card-blue p-6 sm:p-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Specs Column -->
+          <div class="lg:col-span-6 space-y-5">
+            <div class="space-y-1">
+              <div class="font-mono text-xs text-electricBlue font-bold flex items-center gap-2">
+                <i data-lucide="terminal" class="w-4 h-4"></i> C++ SYSTEM APPLICATION
+              </div>
+              <h3 class="text-3xl sm:text-4xl font-display font-black text-white">
+                Mini ATM System
+              </h3>
+              <p class="font-mono text-xs text-slate-400">Structured Financial Transaction & Verification Engine</p>
+            </div>
+
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-sans">
+              Developed a secure console-based <strong class="text-white">Mini ATM system</strong> simulating banking operations including PIN authentication, cash withdrawal, deposit management, and balance inquiries using structured C++ programming logic and strict data validation.
+            </p>
+
+            <!-- Feature Matrix -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 font-mono text-xs">
+              <div class="p-3 bg-obsidian border-2 border-black shadow-brutal-sm">
+                <div class="text-electricBlue font-bold flex items-center gap-1.5 mb-1">
+                  <i data-lucide="lock" class="w-3.5 h-3.5"></i> PIN Authentication
+                </div>
+                <div class="text-slate-400 text-[11px] font-sans">
+                  Secure credential validation, lockout limit preventing brute force, and state enforcement.
+                </div>
+              </div>
+
+              <div class="p-3 bg-obsidian border-2 border-black shadow-brutal-sm">
+                <div class="text-cyberPurple font-bold flex items-center gap-1.5 mb-1">
+                  <i data-lucide="arrow-down-circle" class="w-3.5 h-3.5"></i> Cash Operations
+                </div>
+                <div class="text-slate-400 text-[11px] font-sans">
+                  Real-time ledger updates, overdraft checks, deposit handling, and denomination boundaries.
+                </div>
+              </div>
+
+              <div class="p-3 bg-obsidian border-2 border-black shadow-brutal-sm">
+                <div class="text-amberGold font-bold flex items-center gap-1.5 mb-1">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Data Validation
+                </div>
+                <div class="text-slate-400 text-[11px] font-sans">
+                  Positive non-zero numeric validation, sanitization of inputs, and exception recovery.
+                </div>
+              </div>
+
+              <div class="p-3 bg-obsidian border-2 border-black shadow-brutal-sm">
+                <div class="text-electricBlue font-bold flex items-center gap-1.5 mb-1">
+                  <i data-lucide="activity" class="w-3.5 h-3.5"></i> Balance Inquiries
+                </div>
+                <div class="text-slate-400 text-[11px] font-sans">
+                  Formatted monetary ledger reports, transaction logging, and state integrity.
+                </div>
+              </div>
+            </div>
+
+            <!-- Tech Tags -->
+            <div class="flex flex-wrap gap-2 pt-2 font-mono text-xs">
+              <span class="px-2.5 py-1 bg-surfaceLight text-electricBlue font-bold border border-black">C++</span>
+              <span class="px-2.5 py-1 bg-surfaceLight text-cyberPurple font-bold border border-black">Data Validation</span>
+              <span class="px-2.5 py-1 bg-surfaceLight text-amberGold font-bold border border-black">Security Logic</span>
+              <span class="px-2.5 py-1 bg-surfaceLight text-slate-300 font-bold border border-black">CLI Architecture</span>
+            </div>
+
+            <!-- Direct GitHub Link -->
+            <div class="pt-3">
+              <a 
+                href="https://github.com/Shaktithakur" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn-brutal-blue px-5 py-3 font-mono text-xs font-bold inline-flex items-center gap-2"
+              >
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>EXPLORE ON GITHUB</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Code Architecture Preview Box -->
+          <div class="lg:col-span-6 w-full">
+            <div class="border-2.5 border-black bg-obsidian shadow-brutal-lg overflow-hidden">
+              <div class="bg-slate-900 border-b-2 border-black p-3 flex items-center justify-between">
+                <span class="font-mono text-xs font-bold text-electricBlue">MiniAtmSystem.cpp (C++ Architecture)</span>
+                <span class="font-mono text-[10px] text-slate-400">ISO C++17</span>
+              </div>
+              <div class="p-4 bg-black/95 font-mono text-xs text-slate-300 max-h-[380px] overflow-y-auto terminal-scroll">
+                <pre class="leading-relaxed"><code>#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+
+class MiniATM {
+private:
+    int storedPIN = 1234;
+    double accountBalance = 25000.00;
+    int failedAttempts = 0;
+    const int MAX_ATTEMPTS = 3;
+
+public:
+    bool authenticate(int inputPIN) {
+        if (failedAttempts >= MAX_ATTEMPTS) {
+            std::cout &lt;&lt; "[LOCKED] Exceeded maximum attempts.\n";
+            return false;
+        }
+        if (inputPIN == storedPIN) {
+            failedAttempts = 0;
+            return true;
+        }
+        failedAttempts++;
+        std::cout &lt;&lt; "[ERROR] Invalid PIN! Remaining: " 
+                  &lt;&lt; (MAX_ATTEMPTS - failedAttempts) &lt;&lt; "\n";
+        return false;
+    }
+
+    bool withdraw(double amount) {
+        // Strict Data Validation
+        if (amount &lt;= 0) {
+            std::cout &lt;&lt; "[INVALID] Amount must be positive.\n";
+            return false;
+        }
+        if (amount &gt; accountBalance) {
+            std::cout &lt;&lt; "[FAILED] Insufficient funds.\n";
+            return false;
+        }
+        accountBalance -= amount;
+        return true;
+    }
+
+    void deposit(double amount) {
+        if (amount &gt; 0) {
+            accountBalance += amount;
+            std::cout &lt;&lt; "[SUCCESS] Deposited: ₹" &lt;&lt; amount &lt;&lt; "\n";
+        }
+    }
+};</code></pre>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 6. CERTIFICATIONS & CREDENTIALS SHOWCASE -->
+    <section id="certifications" class="space-y-6">
+      
+      <div class="flex items-center justify-between flex-wrap gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-amberGold text-black border-2 border-black font-mono font-black flex items-center justify-center text-sm shadow-brutal-sm">
+            05
+          </div>
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-display font-black tracking-tight text-white uppercase">
+              Certifications & Credentials
+            </h2>
+            <p class="font-mono text-xs text-slate-400">Industry-recognized credentials in Oracle Cloud, Microsoft Power BI, and C++ Programming</p>
+          </div>
+        </div>
+
+        <span class="font-mono text-xs px-3 py-1 bg-surface border-2 border-black text-amberGold font-bold shadow-brutal-sm">
+          3 CREDENTIALS VERIFIED
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        
+        <!-- Cert 1: Oracle Cloud OCI -->
+        <div class="brutal-card-amber p-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="w-10 h-10 bg-amberGold text-black border-2 border-black font-mono font-black flex items-center justify-center text-sm shadow-brutal-sm">
+                OCI
+              </span>
+              <span class="px-2.5 py-0.5 bg-amberGold/20 text-amberGold border border-black font-mono text-[10px] font-bold">
+                NOVEMBER 2025
+              </span>
+            </div>
+
+            <div>
+              <div class="font-mono text-xs text-amberGold font-bold uppercase tracking-wider mb-1">
+                Oracle Corporation
+              </div>
+              <h3 class="text-xl font-display font-black text-white">
+                Oracle Cloud Infrastructure (OCI) Certification
+              </h3>
+            </div>
+
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-sans">
+              Validated expertise in Oracle Cloud Infrastructure core concepts, including Virtual Cloud Networks (VCN), Compute shapes, Identity and Access Management (IAM), block and object storage architectures, and cloud security frameworks.
+            </p>
+
+            <div class="space-y-1.5 font-mono text-xs text-slate-300 pt-2 border-t border-slate-800">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-amberGold"></i> Cloud Networking & Security
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-amberGold"></i> Autonomous Databases & Compute
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-amberGold"></i> Infrastructure & Cloud Scalability
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t-2 border-slate-800 flex items-center justify-between font-mono text-xs">
+            <span class="text-slate-400">Issuer: Oracle</span>
+            <span class="text-amberGold font-bold flex items-center gap-1">
+              Verified <i data-lucide="shield-check" class="w-4 h-4"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Cert 2: Power BI - Microsoft -->
+        <div class="brutal-card-blue p-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="w-10 h-10 bg-electricBlue text-white border-2 border-black font-mono font-black flex items-center justify-center text-sm shadow-brutal-sm">
+                MS
+              </span>
+              <span class="px-2.5 py-0.5 bg-electricBlue/20 text-electricBlue border border-black font-mono text-[10px] font-bold">
+                NOVEMBER 2024
+              </span>
+            </div>
+
+            <div>
+              <div class="font-mono text-xs text-electricBlue font-bold uppercase tracking-wider mb-1">
+                Microsoft
+              </div>
+              <h3 class="text-xl font-display font-black text-white">
+                Get Started Building with Power BI
+              </h3>
+            </div>
+
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-sans">
+              Comprehensive credential focusing on preparing, modeling, and visualizing datasets. Proficient in transforming raw data through Power Query, defining calculated measures, and constructing interactive visual reports.
+            </p>
+
+            <div class="space-y-1.5 font-mono text-xs text-slate-300 pt-2 border-t border-slate-800">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-electricBlue"></i> Data Modeling & Power Query ETL
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-electricBlue"></i> Interactive Dashboard Creation
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-electricBlue"></i> Business KPI & Drill-Down Reports
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t-2 border-slate-800 flex items-center justify-between font-mono text-xs">
+            <span class="text-slate-400">Issuer: Microsoft</span>
+            <span class="text-electricBlue font-bold flex items-center gap-1">
+              Verified <i data-lucide="shield-check" class="w-4 h-4"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Cert 3: C++ Programming - Udemy -->
+        <div class="brutal-card-purple p-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="w-10 h-10 bg-cyberPurple text-white border-2 border-black font-mono font-black flex items-center justify-center text-sm shadow-brutal-sm">
+                C++
+              </span>
+              <span class="px-2.5 py-0.5 bg-cyberPurple/20 text-cyberPurple border border-black font-mono text-[10px] font-bold">
+                NOVEMBER 2024
+              </span>
+            </div>
+
+            <div>
+              <div class="font-mono text-xs text-cyberPurple font-bold uppercase tracking-wider mb-1">
+                Udemy
+              </div>
+              <h3 class="text-xl font-display font-black text-white">
+                C++ Programming Certification
+              </h3>
+            </div>
+
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-sans">
+              Rigorous mastery of modern C++ programming covering Object-Oriented Programming (OOP), pointers and memory dynamics, functions, file stream handling, and structural data validation paradigms.
+            </p>
+
+            <div class="space-y-1.5 font-mono text-xs text-slate-300 pt-2 border-t border-slate-800">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-cyberPurple"></i> Object-Oriented System Design
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-cyberPurple"></i> Pointers & Memory Management
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-cyberPurple"></i> Strict Input Validation & Exceptions
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t-2 border-slate-800 flex items-center justify-between font-mono text-xs">
+            <span class="text-slate-400">Issuer: Udemy</span>
+            <span class="text-cyberPurple font-bold flex items-center gap-1">
+              Verified <i data-lucide="shield-check" class="w-4 h-4"></i>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 7. CONTACT & CONNECT -->
+    <section id="contact" class="space-y-6">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-electricBlue text-white border-2 border-black font-mono font-black flex items-center justify-center text-sm shadow-brutal-sm">
+          06
+        </div>
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-display font-black tracking-tight text-white uppercase">
+            Contact & Quick Connect
+          </h2>
+          <p class="font-mono text-xs text-slate-400">Available for Data Analyst, IT, and software development opportunities</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: Verified Contact Info Cards -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <!-- Email Card -->
+          <div class="brutal-card-blue p-5 group flex items-start gap-4">
+            <div class="w-12 h-12 bg-electricBlue/20 text-electricBlue border-2 border-black flex items-center justify-center shrink-0 shadow-brutal-sm">
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </div>
+            <div class="flex-1">
+              <div class="font-mono text-xs text-slate-400 font-bold uppercase">Direct Email</div>
+              <a href="mailto:ssthakur6262@gmail.com" class="text-base sm:text-lg font-mono font-bold text-white hover:text-electricBlue transition-colors break-all">
+                ssthakur6262@gmail.com
+              </a>
+              <div class="mt-2">
+                <button onclick="copyDirectEmail('ssthakur6262@gmail.com')" class="text-xs font-mono text-electricBlue hover:underline flex items-center gap-1 font-bold">
+                  <i data-lucide="copy" class="w-3.5 h-3.5"></i> Click to Copy Email
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phone Card -->
+          <div class="brutal-card-purple p-5 group flex items-start gap-4">
+            <div class="w-12 h-12 bg-cyberPurple/20 text-cyberPurple border-2 border-black flex items-center justify-center shrink-0 shadow-brutal-sm">
+              <i data-lucide="phone-call" class="w-5 h-5"></i>
+            </div>
+            <div class="flex-1">
+              <div class="font-mono text-xs text-slate-400 font-bold uppercase">Phone / WhatsApp</div>
+              <a href="tel:+916262079884" class="text-base sm:text-lg font-mono font-bold text-white hover:text-cyberPurple transition-colors">
+                +91 6262079884
+              </a>
+              <div class="mt-2">
+                <button onclick="copyDirectPhone('+916262079884')" class="text-xs font-mono text-cyberPurple hover:underline flex items-center gap-1 font-bold">
+                  <i data-lucide="copy" class="w-3.5 h-3.5"></i> Click to Copy Phone
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Location Card -->
+          <div class="brutal-card-dark p-5 group flex items-start gap-4">
+            <div class="w-12 h-12 bg-slate-800 text-slate-300 border-2 border-black flex items-center justify-center shrink-0 shadow-brutal-sm">
+              <i data-lucide="map-pin" class="w-5 h-5 text-crimsonRed"></i>
+            </div>
+            <div class="flex-1">
+              <div class="font-mono text-xs text-slate-400 font-bold uppercase">Location</div>
+              <div class="text-base sm:text-lg font-mono font-bold text-white">
+                Bhopal, Madhya Pradesh, India
+              </div>
+              <p class="text-xs font-mono text-slate-400 mt-1">Open to on-site, hybrid, and remote roles</p>
+            </div>
+          </div>
+
+          <!-- Social Profiles: GitHub & LinkedIn -->
+          <div class="grid grid-cols-2 gap-3 pt-2 font-mono">
+            <a href="https://github.com/Shaktithakur" target="_blank" rel="noopener noreferrer" class="p-3 bg-surface border-2 border-black shadow-brutal-sm hover:-translate-y-1 hover:shadow-brutal-blue hover:border-electricBlue transition-all flex items-center justify-center gap-2 text-xs font-bold text-slate-200 hover:text-electricBlue">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span>GITHUB</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/shakti-singh--thakur" target="_blank" rel="noopener noreferrer" class="p-3 bg-surface border-2 border-black shadow-brutal-sm hover:-translate-y-1 hover:shadow-brutal-purple hover:border-cyberPurple transition-all flex items-center justify-center gap-2 text-xs font-bold text-slate-200 hover:text-cyberPurple">
+              <i data-lucide="linkedin" class="w-4 h-4"></i>
+              <span>LINKEDIN</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right: Message Form -->
+        <div class="lg:col-span-7 brutal-card-blue p-6 sm:p-8">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-display font-black text-white uppercase">
+              Send a Transmission
+            </h3>
+            <span class="font-mono text-xs text-electricBlue font-bold px-2 py-0.5 border border-black bg-electricBlue/20">
+              FAST DISPATCH
+            </span>
+          </div>
+
+          <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4 font-mono text-xs sm:text-sm">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="senderName" class="block font-bold text-slate-300 mb-1">YOUR NAME *</label>
+                <input 
+                  type="text" 
+                  id="senderName" 
+                  required 
+                  placeholder="e.g. Alex Rivera" 
+                  class="w-full bg-obsidian border-2 border-black p-2.5 text-white font-mono focus:border-electricBlue focus:outline-none shadow-brutal-sm"
+                />
+              </div>
+              <div>
+                <label for="senderEmail" class="block font-bold text-slate-300 mb-1">YOUR EMAIL *</label>
+                <input 
+                  type="email" 
+                  id="senderEmail" 
+                  required 
+                  placeholder="alex@company.com" 
+                  class="w-full bg-obsidian border-2 border-black p-2.5 text-white font-mono focus:border-electricBlue focus:outline-none shadow-brutal-sm"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="messageSubject" class="block font-bold text-slate-300 mb-1">SUBJECT / TOPIC *</label>
+              <input 
+                type="text" 
+                id="messageSubject" 
+                required 
+                placeholder="Data Analyst Opportunity / Discussion" 
+                class="w-full bg-obsidian border-2 border-black p-2.5 text-white font-mono focus:border-electricBlue focus:outline-none shadow-brutal-sm"
+              />
+            </div>
+
+            <div>
+              <label for="messageContent" class="block font-bold text-slate-300 mb-1">MESSAGE / INQUIRY *</label>
+              <textarea 
+                id="messageContent" 
+                rows="4" 
+                required 
+                placeholder="Hi Shakti, I came across your portfolio and would love to speak regarding..." 
+                class="w-full bg-obsidian border-2 border-black p-2.5 text-white font-mono focus:border-electricBlue focus:outline-none shadow-brutal-sm"
+              ></textarea>
+            </div>
+
+            <div class="flex items-center justify-between pt-2">
+              <button type="submit" class="btn-brutal-blue px-6 py-3 font-mono text-sm font-bold flex items-center gap-2">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>TRANSMIT MESSAGE</span>
+              </button>
+              <span id="formFeedback" class="text-xs font-mono text-electricBlue font-bold"></span>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-20 border-t-2.5 border-black bg-surface font-mono text-xs py-10 px-4 sm:px-8">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Left info -->
+      <div class="space-y-1 text-center md:text-left">
+        <div class="font-display font-black text-lg text-white">
+          SHAKTI SINGH THAKUR
+        </div>
+        <p class="text-slate-400 text-xs">
+          B.Tech Information Technology (2024–2028) — Bansal Institute of Science & Technology, Bhopal
+        </p>
+        <p class="text-[11px] text-slate-500">
+          Cyber Neo-Brutalist Architecture • Pitch Dark Obsidian (#0a0a0e) • Electric Blue & Cyber Purple
+        </p>
+      </div>
+
+      <!-- Live Clock & Top Button -->
+      <div class="flex items-center gap-3">
+        <div class="px-3.5 py-1.5 bg-obsidian border-2 border-black shadow-brutal-sm text-center">
+          <span class="text-slate-400 text-[10px] block">LOCAL TIME (IST)</span>
+          <span id="liveClock" class="font-bold text-electricBlue text-sm">--:--:-- IST</span>
+        </div>
+
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="btn-brutal-blue p-2.5 font-bold" title="Back to top">
+          <i data-lucide="arrow-up" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto mt-8 pt-4 border-t border-slate-800 text-center text-[11px] text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <span>© 2026 Shakti Singh Thakur. All rights reserved.</span>
+      <span class="text-slate-400 font-bold">C++ • MICROSOFT POWER BI • ORACLE CLOUD (OCI) • DATA VALIDATION</span>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toastNotification" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-electricBlue text-white border-2 border-black px-5 py-3 font-mono text-xs font-bold flex items-center gap-2.5 shadow-brutal-lg">
+    <i data-lucide="check-circle" class="w-4 h-4"></i>
+    <span id="toastMessage">Notification</span>
+  </div>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Toast Notification
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotification');
+      const toastMsg = document.getElementById('toastMessage');
+      toastMsg.textContent = msg;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3500);
+    }
+
+    // Copy Email
+    function copyEmail() {
+      const email = 'ssthakur6262@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        const btn = document.getElementById('copyEmailHeroBtn');
+        btn.textContent = 'COPIED!';
+        showToast('Email copied to clipboard!');
+        confetti({ particleCount: 50, spread: 60, origin: { y: 0.8 }, colors: ['#3b82f6', '#8b5cf6', '#f59e0b'] });
+        setTimeout(() => { btn.textContent = 'COPY EMAIL'; }, 2500);
+      });
+    }
+
+    function copyDirectEmail(email) {
+      navigator.clipboard.writeText(email).then(() => {
+        showToast(`Copied email: ${email}`);
+      });
+    }
+
+    function copyDirectPhone(phone) {
+      navigator.clipboard.writeText(phone).then(() => {
+        showToast(`Copied phone: ${phone}`);
+      });
+    }
+
+    // Live Clock (IST)
+    function updateClock() {
+      const clockEl = document.getElementById('liveClock');
+      if (clockEl) {
+        const options = { timeZone: 'Asia/Kolkata', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        clockEl.textContent = new Intl.DateTimeFormat([], options).format(new Date()) + ' IST';
+      }
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Hero Live CLI Typing Animation
+    const heroCommands = [
+      'query --skills',
+      'verify --cloud "Oracle OCI"',
+      'load PowerBI_model.pbix',
+      'cat education.txt',
+      'run MiniAtmSystem.bin'
+    ];
+    let hCmdIdx = 0;
+    let hCharIdx = 0;
+    let hIsDeleting = false;
+
+    function typeHeroCmd() {
+      const target = document.getElementById('heroTypingCmd');
+      if (!target) return;
+      const current = heroCommands[hCmdIdx];
+
+      if (!hIsDeleting) {
+        target.textContent = current.substring(0, hCharIdx + 1);
+        hCharIdx++;
+        if (hCharIdx === current.length) {
+          hIsDeleting = true;
+          setTimeout(typeHeroCmd, 1800);
+          return;
+        }
+        setTimeout(typeHeroCmd, 85);
+      } else {
+        target.textContent = current.substring(0, hCharIdx - 1);
+        hCharIdx--;
+        if (hCharIdx === 0) {
+          hIsDeleting = false;
+          hCmdIdx = (hCmdIdx + 1) % heroCommands.length;
+          setTimeout(typeHeroCmd, 350);
+          return;
+        }
+        setTimeout(typeHeroCmd, 45);
+      }
+    }
+    setTimeout(typeHeroCmd, 800);
+
+    function runHeroCmd(cmd) {
+      if (cmd === 'skills') {
+        window.location.hash = '#skills';
+      } else if (cmd === 'projects') {
+        window.location.hash = '#projects';
+      } else if (cmd === 'contact') {
+        window.location.hash = '#contact';
+      }
+      showToast(`Navigated to #${cmd}`);
+    }
+
+    // Contact Form Submission
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('senderName').value;
+      const feedback = document.getElementById('formFeedback');
+
+      confetti({
+        particleCount: 80,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#3b82f6', '#8b5cf6', '#f59e0b']
+      });
+
+      feedback.textContent = `✓ Transmission received, ${name}! Thank you.`;
+      showToast(`Message transmitted from ${name}!`);
+
+      setTimeout(() => {
+        document.getElementById('contactForm').reset();
+        feedback.textContent = '';
+      }, 4500);
+    }
+  </script>
+</body>
+</html>
